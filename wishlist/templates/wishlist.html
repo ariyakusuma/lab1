@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h5>Nama: </h5>
-<p>{{nama}}</p>
+<nav class="navbar" style="background-color: hotpink">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">{{nama}}</span>
+      <a class="btn btn-outline-success me-2" type="button" href="{% url 'wishlist:logout' %}">Log Out</a>
+    </div>
+  </nav>
+<!-- <h5>Nama: </h5>
+<p>{{nama}}</p> -->
 
-<table>
+<table class = "table table-bordered w-auto" style="margin-left:auto; margin-right:auto; margin-top:25px;">
+    <thread style="background-color: cyan;"></thread>
     <tr>
     <th>Nama Barang</th>
     <th>Harga Barang</th>
@@ -21,6 +28,6 @@
 
 </table>
 <h5>Sesi terakhir login: {{ last_login }}</h5>
-<button><a href="{% url 'wishlist:logout' %}">Logout</a></button>
+
 
 {% endblock content %}
